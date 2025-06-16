@@ -1,3 +1,7 @@
 node_modules/
 database/database.sqlite
 database/database.sqlite
+
+.vscode/
+
+.env

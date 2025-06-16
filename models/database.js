@@ -1,16 +1,14 @@
 import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
-export const sequelize = new Sequelize({
-  dialect: 'postgres',
-  host: 'dpg-d13nn1qli9vc738olbm0-a.oregon-postgres.render.com',
-  port: 5432,
-  database: 'komuniui_database',
-  username: 'komuniui_database_user',
-  password: 'cNHXtOBi5a1Gr5E0hzt4eL7LEvLvOEIA',
+dotenv.config();
+
+export const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: process.env.DB_DIALECT,
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: false,
+      rejectUnauthorized: false
     }
   },
   logging: false
@@ -19,9 +17,9 @@ export const sequelize = new Sequelize({
 (async () => {
   try {
     await sequelize.authenticate();
-    console.log('Conectado com sucesso ao PostgreSQL!');
+    console.log('Connected to Database successfully!');
   } catch (err) {
-    console.error('Erro ao conectar:', err);
+    console.error('Error connecting:', err);
   }
 })();
 
