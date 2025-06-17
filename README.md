@@ -4,17 +4,17 @@
 
 KomuniUI é uma API que visa facilitar a comunicação entre pessoas de uma comunidade local, com funcionalidades para criar avisos, eventos, pedidos e solicitações, e comentários. A API foi desenvolvida para organizar essas informações de maneira simples, eficiente e sem a bagunça de grupos informais de comunicação.
 
-## Tecnologias Utilizadas
-Este projeto utiliza as seguintes tecnologias:
-
-- **Node.js:** Ambiente de execução JavaScript no lado do servidor.
-- **Express**: Framework para Node.js, utilizado para criar as rotas da API.
-- **Sequelize**: ORM (Object Relational Mapping) para interação com o banco de dados SQLite.
-- **SQLite3**: Banco de dados relacional simples e eficiente.
-- **JWT (JSON Web Token)**: Utilizado para autenticação de usuários.
-- **Swagger**: Ferramenta de documentação interativa da API.
-- **Jest**: Framework de testes para garantir a qualidade do código.
-- **Supertest**: Biblioteca para testar APIs HTTP.
+## Recursos Utilizados
+Este projeto utiliza os seguintes recursos:
+- **Node.js:** Ambiente JavaScript no servidor.
+- **Express:** Framework para criar APIs e rotas.
+- **Sequelize:** ORM para bancos relacionais como SQLite e Postgres.
+- **PostgreSQL:** Banco de dados relacional robusto.
+- **EJS:** Template engine para HTML dinâmico.
+- **JWT:** Autenticação via tokens.
+- **Swagger:** Documentação interativa de APIs.
+- **Jest:** Framework para testes automatizados.
+- **Supertest:** Testa APIs HTTP de forma prática.
 
 ## Configuração do Projeto
 ### Requisitos
