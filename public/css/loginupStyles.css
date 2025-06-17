@@ -1,66 +1,66 @@
  body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #8B24F9, #FFB600);
-        }
+     margin: 0;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: linear-gradient(135deg, #8B24F9, #FFB600);
+ }
 
-        * {
-            transition: 1s;
-        }
+ * {
+     transition: 1s;
+ }
 
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 400px;
-            border: 2px solid black;
-            width: 100%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
+ .container {
+     background-color: white;
+     padding: 30px;
+     border-radius: 12px;
+     max-width: 400px;
+     border: 2px solid black;
+     width: 100%;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+     text-align: center;
+ }
 
-        h2 {
-            margin-bottom: 24px;
-        }
+ h2 {
+     margin-bottom: 24px;
+ }
 
-        label {
-            display: block;
-            text-align: left;
-            font-size: 14px;
-            margin: 10px 0 4px;
-            color: #333;
-        }
+ label {
+     display: block;
+     text-align: left;
+     font-size: 14px;
+     margin: 10px 0 4px;
+     color: #333;
+ }
 
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            border: 2px solid black;
-            border-radius: 8px;
-            box-sizing: border-box;
-        }
+ input {
+     width: 100%;
+     padding: 12px;
+     margin-bottom: 12px;
+     border: 2px solid black;
+     border-radius: 8px;
+     box-sizing: border-box;
+ }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 8px;
-        }
+ button {
+     width: 100%;
+     padding: 12px;
+     background-color: black;
+     color: white;
+     border: none;
+     border-radius: 8px;
+     font-weight: bold;
+     cursor: pointer;
+     margin-top: 8px;
+ }
 
-        button:hover {
-            opacity: 0.8;
-        }
+ button:hover {
+     opacity: 0.8;
+ }
 
-        p a {
-            color: black;
-            font-weight: bold;
-            text-decoration: none;
-        }
+ p a {
+     color: black;
+     font-weight: bold;
+     text-decoration: none;
+ }
