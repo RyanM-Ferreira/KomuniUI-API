@@ -12,7 +12,7 @@ Este projeto utiliza os seguintes recursos:
 
 - **Node.js:** Ambiente JavaScript no servidor.
 - **Express:** Framework para criar APIs e rotas.
-- **Sequelize:** ORM para bancos relacionais como SQLite e Postgres.
+- **Sequelize:** ORM para bancos relacionais.
 - **PostgreSQL:** Banco de dados relacional robusto.
 - **EJS:** Template engine para HTML dinâmico.
 - **JWT:** Autenticação via tokens.
