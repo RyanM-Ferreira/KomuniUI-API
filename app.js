@@ -21,7 +21,7 @@ app.set('views', './views');
 app.use(express.static('public'));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })); // Para ler dados de forms
+app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.use(usersRoute);
 app.use(commentsRoute);
