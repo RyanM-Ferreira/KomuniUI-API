@@ -1,5 +1,6 @@
 import { sequelize } from './database.js';
 import Sequelize from 'sequelize';
+import { logInfo, logError, sanitizeForLogging } from '../middleware/logger.js';
 
 export const User = sequelize.define('user', {
     userId: {
@@ -31,10 +32,10 @@ export const User = sequelize.define('user', {
 export async function createUser(user) {
     try {
         const result = await User.create(user);
-        console.log(`User ${result.name} foi criado com sucesso!`);
+        logInfo(`User ${result.name} foi criado com sucesso!`);
         return result;
     } catch (error) {
-        console.error('Erro ao criar o User:', error);
+        logError('Erro ao criar o User:', error);
         throw error;
     }
 };
@@ -45,10 +46,10 @@ export async function readUser() {
         if (result.length === 0) {
             throw "Nenhum User encontrado!";
         }
-        console.log(`Users consultados com sucesso!`, result);
+        logInfo(`Users consultados com sucesso!`, sanitizeForLogging(result));
         return result;
     } catch (error) {
-        console.error('Erro ao buscar os Users:', error);
+        logError('Erro ao buscar os Users:', error);
         throw error;
     }
 };
@@ -59,10 +60,10 @@ export async function readUserPerId(id) {
         if (result === null) {
             throw "User não encontrado!";
         }
-        console.log(`User consultado com sucesso!`, result);
+        logInfo(`User consultado com sucesso!`, sanitizeForLogging(result));
         return result;
     } catch (error) {
-        console.error('Erro ao buscar o User:', error);
+        logError('Erro ao buscar o User:', error);
         throw error;
     }
 };
@@ -80,12 +81,12 @@ export async function updateUserPerId(id, dadosUser) {
                 }
             }
             await result.save();
-            console.log(`User atualizado com sucesso!`, result);
+            logInfo(`User atualizado com sucesso!`, sanitizeForLogging(result));
         }
 
         return result;
     } catch (error) {
-        console.error('Erro ao atualizar o User:', error);
+        logError('Erro ao atualizar o User:', error);
         throw error;
     }
 };
@@ -96,10 +97,10 @@ export async function deleteUserPerId(id) {
         if (result === 0) {
             throw "User não encontrado!";
         }
-        console.log(`User deletado com sucesso!`, result);
+        logInfo(`User deletado com sucesso!`, result);
         return result;
     } catch (error) {
-        console.error('Erro ao deletar o user:', error);
+        logError('Erro ao deletar o user:', error);
         throw error;
     }
 };
