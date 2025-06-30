@@ -24,7 +24,7 @@ Este projeto utiliza os seguintes recursos:
 
 ### Requisitos
 
-- Node.
+- NodeJS.
 - NPM (Node Package Manager).
 
 ## Passo a Passo para Inicializar o Projeto
@@ -33,7 +33,7 @@ Este projeto utiliza os seguintes recursos:
 
 Primeiro, clone o repositório para o seu ambiente local:
 
-``` powershell
+``` bash
 git clone https://github.com/RyanM-Ferreira/KomuniUI-API.git
 
 cd KomuniUI-API
@@ -43,7 +43,7 @@ cd KomuniUI-API
 
 Instale todas as dependências necessárias do projeto:
 
-``` powershell
+``` bash
 npm install
 ```
 
@@ -55,7 +55,7 @@ O projeto usa o SQLite para armazenar os dados. Ao rodar o projeto pela primeira
 
 Para iniciar o servidor em modo de desenvolvimento (nodemon), utilize o comando:
 
-``` powershell
+``` bash
 npm run start:dev
 ```
 
@@ -85,13 +85,13 @@ A API é estruturada com as seguintes rotas principais:
 
 O projeto possui testes automatizados com Jest. Para rodar todos os testes, utilize o comando:
 
-``` powershell
+``` bash
 npm run test-global
 ```
 
 Você também pode rodar testes específicos para usuários, comentários ou postagens:
 
-``` powershell
+``` bash
 npm run test-users
 npm run test-comments
 npm run test-posts

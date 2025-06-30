@@ -32,12 +32,13 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.get('/signup', (req, res) => { res.render('signup'); });
 app.get('/login', (req, res) => { res.render('login'); });
+app.get('/index', (req, res) => { res.render('index'); });
 
 export async function App() {
     await sequelize.sync();
     app.listen(PORT, () => {
         console.log(`Servidor rodando na porta ${PORT}`);
-        console.log(`Acesse http://localhost:3000/signup`);
+        console.log(`Acesse http://localhost:3000/index`);
     });
 }
 

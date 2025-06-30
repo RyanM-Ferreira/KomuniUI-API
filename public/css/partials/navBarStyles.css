@@ -1,0 +1,53 @@
+.header {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.header h1 {
+    margin-left: 10px;
+}
+
+.header input {
+    width: 50%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.newPost {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.newPost:hover {
+    background-color: #555;
+}
+
+.header-icons .icon {
+    width: 32px;
+    height: 32px;
+    background-color: #333;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.header-icons .icon:hover {
+    background-color: #555;
+}

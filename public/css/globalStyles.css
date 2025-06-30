@@ -1,0 +1,35 @@
+:root {
+    --mapColor: #a6d9f7;
+    --secondaryButtonColor: #ddd;
+    --buttonBorderRadius: 8px;
+    --buttonHoverColor: #555;
+
+    --gradientColor1: #a12edb;
+    --gradientColor2: #f58a29;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    background: linear-gradient(135deg, var(--gradientColor1), var(--gradientColor2));
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: var(--buttonBorderRadius);
+}
+
+button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}

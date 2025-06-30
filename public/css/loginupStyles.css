@@ -7,10 +7,6 @@
      background: linear-gradient(135deg, #8B24F9, #FFB600);
  }
 
- * {
-     transition: 1s;
- }
-
  .container {
      background-color: white;
      padding: 30px;
