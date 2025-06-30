@@ -73,5 +73,5 @@ authRoute.post('/login', async (req, res) => {
     }
     const token = jwt.sign({ userId: user.userId, email: user.email }, SECRET, { expiresIn: '1h' });
     console.log('Token gerado no login:', token);
-    res.send({ token });
+    res.send({ email: user.email, token });
 });
