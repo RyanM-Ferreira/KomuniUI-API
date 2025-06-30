@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar nova postagem</title>
+    <link rel="stylesheet" href="css/newPostStyles.css">
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Criar nova postagem</h2>
+                <button class="close" onclick="fecharModal()">&times;</button>
+            </div>
+
+            <form id="postForm">
+                <div class="post-type">
+                    <label><input type="radio" name="tipo" value="alert" checked> Postagem</label>
+                    <label><input type="radio" name="tipo" value="event"> Evento</label>
+                    <label><input type="radio" name="tipo" value="request"> Pedido</label>
+                </div>
+
+                <div class="row">
+                    <input type="number" placeholder="ID do Usuário (ex: 1)" id="userId" required>
+                    <input type="text" placeholder="Título" id="titulo" required>
+                    <input type="text" placeholder="Descrição" id="descricao" required>
+                </div>
+
+                <div class="row">
+                    <input type="date" id="data">
+                    <input type="text" placeholder="Adicional (opcional)" id="adicional">
+                </div>
+
+                <div class="row">
+                    <textarea placeholder="Conteúdo" id="conteudo" required></textarea>
+                    <input class="map" type="text" placeholder="Localização (opcional)" id="localizacao">
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="post">Postar</button>
+                    <button type="button" class="cancel" onclick="fecharModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/postForm.js"></script>
+</body>
+
+</html>
