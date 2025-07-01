@@ -123,3 +123,19 @@ export async function deleteCommentsPerId(id) {
         throw error;
     }
 };
+
+export async function readCommentsByPostId(postId) {
+    try {
+        const result = await Comments.findAll({
+            where: { postId: postId }
+        });
+        if (result.length === 0) {
+            throw "Nenhum comentário encontrado para esse post!";
+        }
+        console.log(`Comentários do post ${postId} consultados com sucesso!`, result);
+        return result;
+    } catch (error) {
+        console.error('Erro ao buscar os comentários por postId:', error);
+        throw error;
+    }
+}

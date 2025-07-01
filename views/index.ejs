@@ -1,24 +1,24 @@
+<!-- index.ejs -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova Postagem</title>
-
+    <title>KomuniUI</title>
     <link rel="stylesheet" href="css/partials/sideBarStyles.css">
     <link rel="stylesheet" href="css/partials/navBarStyles.css">
-
     <link rel="stylesheet" href="css/globalStyles.css">
+    <link rel="stylesheet" href="css/homeStyles.css">
 </head>
 
 <body>
     <%- include('partials/sideBar') %>
-
         <div class="main-content">
             <%- include('partials/navBar') %>
-                <%- include('newpost') %>
+                <%- include('home') %>
         </div>
+        <script src="/scripts/feed.js"></script>
 </body>
 
 </html>

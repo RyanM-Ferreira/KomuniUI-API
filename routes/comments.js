@@ -6,7 +6,7 @@
  */
 
 import express from 'express';
-import { createComment, readComments, readCommentsPerId, updateCommentsPerId, deleteCommentsPerId } from './../models/comments.js';
+import { createComment, readComments, readCommentsPerId, updateCommentsPerId, deleteCommentsPerId, readCommentsByPostId } from './../models/comments.js';
 
 export const commentsRoute = express.Router();
 
@@ -344,5 +344,22 @@ commentsRoute.get('/comments', async (req, res) => {
             }
         };
         return res.send(response);
+    }
+});
+
+// Rota para filtrar por post, ainda falta fazer o swagger 
+commentsRoute.get('/comments/post/:postId', async (req, res) => {
+    const { postId } = req.params;
+
+    try {
+        const response = await readCommentsByPostId(postId);
+        res.status(200).send(response);
+    } catch (error) {
+        console.error('Erro ao buscar comentários do post:', error);
+        res.status(500).send({
+            erro: {
+                mensagem: 'Erro interno ao buscar os comentários.'
+            }
+        });
     }
 });

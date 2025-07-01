@@ -1,0 +1,132 @@
+.post-details-container {
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+p {
+    word-break: break-all;
+}
+
+.postDetailCard {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.postDetailCard .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-radius: 12px;
+}
+
+.postDetailCard .type {
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.postDetailCard .info {
+    display: flex;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.postDetailCard .info div {
+    flex: 1;
+}
+
+.postDetailCard input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+}
+
+.postDetailCard .footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.postDetailCard button {
+    background-color: black;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.comments-container {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.comments-container h2 {
+    margin-bottom: 12px;
+}
+
+.comment-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.add-comment {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin: 16px;
+    background: #333;
+}
+
+.add-comment textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    min-height: 60px;
+    font-family: inherit;
+}
+
+.add-comment button {
+    align-self: flex-end;
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-comment button:hover {
+    background-color: #333;
+}

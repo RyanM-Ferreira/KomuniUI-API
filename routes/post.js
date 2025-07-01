@@ -10,7 +10,9 @@ import { authMiddleware } from '../middleware/authMiddleware.js';
 import express from 'express';
 import { createPost, readPosts, readPostsPerId, updatePostPerId, deletePostPerId } from '../models/posts.js';
 
+import { Comments } from '../models/comments.js';
 
+export const postDetailsRoute = express.Router();
 export const postsRoute = express.Router();
 
 
@@ -299,7 +301,7 @@ postsRoute.delete('/posts/:id', authMiddleware, async (req, res) => {
  *       500:
  *         description: Erro ao buscar post
  */
-postsRoute.get('/posts/:id', async (req, res) => {
+postsRoute.get('/api/posts/:id', async (req, res) => {
     const id = req.params.id;
 
     try {

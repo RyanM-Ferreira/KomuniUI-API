@@ -33,7 +33,7 @@ export const Posts = sequelize.define('posts', {
     date: {
         type: Sequelize.DATEONLY,
         defaultValue: Sequelize.NOW,
-        validate:{
+        validate: {
             isDate: {
                 msg: 'Data inválida!'
             }
