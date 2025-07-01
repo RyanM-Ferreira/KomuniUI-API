@@ -9,6 +9,10 @@
     border-bottom: 2px solid black;
 }
 
+a {
+    text-decoration: none;
+}
+
 .header h1 {
     margin-left: 10px;
 }
@@ -40,7 +44,7 @@
 }
 
 .header-icons .icon {
-    width: 32px;
+    min-width: 32px;
     height: 32px;
     background-color: #333;
     border-radius: 8px;

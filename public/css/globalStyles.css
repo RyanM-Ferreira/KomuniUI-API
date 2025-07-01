@@ -8,6 +8,28 @@
     --gradientColor2: #f58a29;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +41,7 @@
 body {
     display: flex;
     background: linear-gradient(135deg, var(--gradientColor1), var(--gradientColor2));
-    height: 100vh;
+    min-height: 100vh;
     background-repeat: no-repeat;
 }
 

@@ -41,6 +41,7 @@
 
         if (!email || !password) {
             alert('Por favor, preencha todos os campos.');
+            return;
         }
 
         const response = await fetch('/login', {
@@ -53,8 +54,40 @@
 
         if (response.ok && data.token) {
             localStorage.setItem('token', data.token);
-            localStorage.setItem('email', JSON.stringify(data.email));
-            localStorage.setItem('userId', JSON.stringify(data.userId));
+            localStorage.setItem('email', data.email);                 // salva como string direta
+            localStorage.setItem('userId', data.userId.toString());     // salva userId como string
+            alert('Login realizado com sucesso!');
+            window.location.href = '/index';
+        } else {
+            alert(data.erro?.mensagem || 'Erro ao fazer login');
+        }
+    }); if (localStorage.getItem('token')) {
+        window.location.href = '/index';
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if (!email || !password) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.token) {
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('email', data.email);
+            localStorage.setItem('userId', data.userId.toString());
             alert('Login realizado com sucesso!');
             window.location.href = '/index';
         } else {
