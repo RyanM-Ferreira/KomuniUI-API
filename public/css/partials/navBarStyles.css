@@ -6,11 +6,15 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid black; 
 }
 
 a {
     text-decoration: none;
+}
+
+.logo h1{
+    color: white;
 }
 
 .header h1 {
@@ -37,6 +41,7 @@ a {
     padding: 8px;
     border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .newPost:hover {
@@ -44,12 +49,14 @@ a {
 }
 
 .header-icons .icon {
-    min-width: 32px;
+    min-width: 48px;
     height: 32px;
     background-color: #333;
     border-radius: 8px;
     border: none;
     cursor: pointer;
+    color: white;
+    font-weight: bold;
 }
 
 .header-icons .icon:hover {

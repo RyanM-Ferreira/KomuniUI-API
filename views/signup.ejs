@@ -39,6 +39,11 @@
     document.getElementById('signupForm').addEventListener('submit', async function (event) {
         event.preventDefault();
 
+        function logout() {
+            localStorage.clear();
+            window.location.href = '/login';
+        }
+
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
@@ -76,5 +81,7 @@
         } else {
             alert(data.error?.message || 'Erro ao criar conta');
         }
+
+        logout();
     });
 </script>

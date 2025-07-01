@@ -46,11 +46,6 @@ async function loadComments() {
         const response = await fetch(`http://localhost:3000/comments/post/${postId}`);
         const comments = await response.json();
 
-        if (comments.length === 0) {
-            commentsContainer.innerHTML = `<p>Sem comentários ainda.</p>`;
-            return;
-        }
-
         commentsContainer.innerHTML = `
             <div class="comments-container">
                 <h2>Comentários</h2>
@@ -66,7 +61,7 @@ async function loadComments() {
         `;
     } catch (error) {
         console.error('Erro ao carregar comentários:', error);
-        commentsContainer.innerHTML = "<p>Erro ao carregar comentários.</p>";
+        commentsContainer.innerHTML = "<p>Não há comentários ainda, ou talvez estejamos lidando com problemas internos...</p>";
     }
 }
 

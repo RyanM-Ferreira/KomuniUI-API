@@ -1,4 +1,3 @@
-<!-- index.ejs -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,9 +13,12 @@
 
 <body>
     <%- include('partials/sideBar') %>
-        <div class="main-content">
-            <%- include('partials/navBar') %>
-                <%- include('home') %>
+
+        <div class="postSideBar">
+            <div class="main-content">
+                <%- include('partials/navBar') %>
+                    <%- include('home') %>
+            </div>
         </div>
         <script src="/scripts/feed.js"></script>
 </body>

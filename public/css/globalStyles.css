@@ -8,14 +8,19 @@
     --gradientColor2: #f58a29;
 }
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
 }
 
+.postSideBar {
+    width: 100%;
+    margin-left: 200px;
+}
+
 .main-content {
     width: 100%;
-    min-height: 100vh; 
     display: flex;
     flex-direction: column;
 }

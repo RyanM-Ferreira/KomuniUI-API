@@ -14,43 +14,49 @@
 </head>
 
 <body>
-    <div class="main-content">
-        <div class="modal">
-            <div class="modal-header">
-                <h2>Criar nova postagem</h2>
-            </div>
+    <%- include('partials/sideBar') %>
 
-            <form id="postForm">
-                <div class="post-type">
-                    <label><input type="radio" name="tipo" value="alert" checked> Postagem</label>
-                    <label><input type="radio" name="tipo" value="event"> Evento</label>
-                    <label><input type="radio" name="tipo" value="request"> Pedido</label>
-                </div>
+        <div class="postSideBar">
+            <%- include('partials/navBar') %>
+                <div class="main-content">
 
-                <div class="row">
-                    <input type="text" placeholder="Título" id="titulo" required>
-                    <input type="text" placeholder="Descrição" id="descricao" required>
-                </div>
+                    <div class="modal">
+                        <div class="modal-header">
+                            <h2>Criar nova postagem</h2>
+                        </div>
 
-                <div class="row">
-                    <input type="date" id="data">
-                    <input type="text" placeholder="Adicional (opcional)" id="adicional">
-                </div>
+                        <form id="postForm">
+                            <div class="post-type">
+                                <label><input type="radio" name="tipo" value="alert" checked> Postagem</label>
+                                <label><input type="radio" name="tipo" value="event"> Evento</label>
+                                <label><input type="radio" name="tipo" value="request"> Pedido</label>
+                            </div>
 
-                <div class="row">
-                    <textarea placeholder="Conteúdo" id="conteudo" required></textarea>
-                    <input class="map" type="text" placeholder="Localização (opcional)" id="localizacao">
-                </div>
+                            <div class="row">
+                                <input type="text" placeholder="Título" id="titulo" required>
+                                <input type="text" placeholder="Descrição" id="descricao" required>
+                            </div>
 
-                <div class="buttons">
-                    <button type="submit" class="post">Postar</button>
-                    <button type="button" onclick="history.back()" class="cancel">Voltar</button>
+                            <div class="row">
+                                <input type="date" id="data">
+                                <input type="text" placeholder="Adicional (opcional)" id="adicional">
+                            </div>
+
+                            <div class="row">
+                                <textarea placeholder="Conteúdo" id="conteudo" required></textarea>
+                                <input class="map" type="text" placeholder="Localização (opcional)" id="localizacao">
+                            </div>
+
+                            <div class="buttons">
+                                <button type="submit" class="post">Postar</button>
+                                <button type="button" onclick="history.back()" class="cancel">Voltar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
         </div>
-    </div>
 
-    <script src="scripts/postForm.js"></script>
+        <script src="scripts/postForm.js"></script>
 </body>
 
 </html>

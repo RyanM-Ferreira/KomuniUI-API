@@ -20,14 +20,16 @@
             <div class="post-details-container">
                 <div id="postDetail"></div>
 
-                <div class="commentsContainer" id="commentsContainer"></div>
+                <div class="commentsDiv">
+                    <h3>Postar um comentário!</h3>
+                    <div class="add-comment">
+                        <textarea id="commentInput" placeholder="Adicione um comentário..."></textarea>
+                        <button onclick="sendComment()">Enviar</button>
+                    </div>
 
-                <div class="add-comment">
-                    <textarea id="commentInput" placeholder="Adicione um comentário..."></textarea>
-                    <button onclick="sendComment()">Enviar</button>
+                    <div class="commentsContainer" id="commentsContainer"></div>
                 </div>
             </div>
-
     </div>
 
     <script>

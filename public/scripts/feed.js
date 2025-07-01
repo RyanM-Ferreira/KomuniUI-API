@@ -12,7 +12,7 @@ async function loadPosts() {
                 <div class="post-card" onclick="window.location.href='/posts/${post.postId}'">
                     <div class="post-header">
                         <div>
-                            <b>${post.userId}</b> está anunciando <b>[${post.type}]</b>
+                            <b>O(a) usuário(a) ${post.userId}</b> está anunciando um <b>[${post.type}]</b>
                         </div>
                     </div>
 

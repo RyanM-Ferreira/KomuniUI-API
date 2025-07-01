@@ -1,10 +1,6 @@
 .main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    transform: translateY(25%);
     align-items: center;
-    width: 100%;
 }
 
 .modal {

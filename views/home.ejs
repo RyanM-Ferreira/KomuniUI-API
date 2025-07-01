@@ -1,24 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feed</title>
 
-    <link rel="stylesheet" href="css/homeStyles.css">
     <link rel="stylesheet" href="css/globalStyles.css">
+    <link rel="stylesheet" href="css/homeStyles.css">
 </head>
 
 <body>
-    <div class="main-content">
-
-        <div class="mainContainer">
+    <main class="main-content">
+        <section class="container">
             <div class="new-post-box">
                 <p>O que você está pensando?</p>
-                <a href="/newpost"><button>Nova postagem</button></a>
+                <a href="/newpost" class="button">Nova postagem</a>
             </div>
 
-            <div id="postsContainer"></div>
-        </div>
-    </div>
+            <div id="postsContainer" class="posts-container"></div>
+        </section>
+    </main>
 
     <script src="/scripts/feed.js"></script>
 </body>
