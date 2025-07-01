@@ -14,27 +14,27 @@
 </head>
 
 <body>
-    <%- include('partials/sideBar') %>
+    <div class="main-content">
+        <%- include('partials/navBar') %>
 
-        <div class="main-content">
-            <%- include('partials/navBar') %>
+            <div class="post-details-container">
+                <div id="postDetail"></div>
 
-                <div class="post-details-container">
-                    <div id="postDetail"></div>
+                <div class="commentsContainer" id="commentsContainer"></div>
 
-                    <div class="commentsContainer" id="commentsContainer"></div>
-
-                    <div class="add-comment">
-                        <textarea id="commentInput" placeholder="Adicione um comentário..."></textarea>
-                        <button onclick="sendComment()">Enviar</button>
-                    </div>
+                <div class="add-comment">
+                    <textarea id="commentInput" placeholder="Adicione um comentário..."></textarea>
+                    <button onclick="sendComment()">Enviar</button>
                 </div>
-        </div>
+            </div>
 
-        <script>
-            const postId = "<%= postId %>";
-        </script>
-        <script src="/scripts/postDetails.js"></script>
+    </div>
+
+    <script>
+        const postId = "<%= postId %>";
+    </script>
+    <script src="/scripts/postDetails.js"></script>
+    <script src="/scripts/sideBar.js"></script>
 </body>
 
 </html>

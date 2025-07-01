@@ -1,9 +1,24 @@
 <div class="header">
-    <h1>KomuniUI</h1>
+    <a href="/index" class="logo">
+        <h1>KomuniUI</h1>
+    </a>
+
     <input class="searchInput" type="text" placeholder="Pesquisar...">
+
     <div class="header-icons">
-        <button class="newPost">Nova postagem</button>
-        <button class="icon "></button>
-        <button class="icon "></button>
+        <a href="/newpost">
+            <button class="newPost">Nova postagem</button>
+        </a>
+        <a href="/signup">
+            <button class="icon">US</button>
+        </a>
+        <button class="icon" onclick="logout()">Quit</button>
     </div>
+    <script>
+        function logout() {
+            localStorage.clear();
+            window.location.href = '/login';
+        }
+
+    </script>
 </div>

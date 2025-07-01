@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar nova postagem</title>
     <link rel="stylesheet" href="css/newPostStyles.css">
+
+    <link rel="stylesheet" href="css/partials/sideBarStyles.css">
+    <link rel="stylesheet" href="css/partials/navBarStyles.css">
+    <link rel="stylesheet" href="css/globalStyles.css">
+    <link rel="stylesheet" href="css/homeStyles.css">
 </head>
 
 <body>
@@ -13,7 +18,6 @@
         <div class="modal">
             <div class="modal-header">
                 <h2>Criar nova postagem</h2>
-                <button class="close" onclick="fecharModal()">&times;</button>
             </div>
 
             <form id="postForm">
@@ -24,7 +28,6 @@
                 </div>
 
                 <div class="row">
-                    <input type="number" placeholder="ID do Usuário (ex: 1)" id="userId" required>
                     <input type="text" placeholder="Título" id="titulo" required>
                     <input type="text" placeholder="Descrição" id="descricao" required>
                 </div>
@@ -41,7 +44,7 @@
 
                 <div class="buttons">
                     <button type="submit" class="post">Postar</button>
-                    <button type="button" class="cancel" onclick="fecharModal()">Cancelar</button>
+                    <button type="button" onclick="history.back()" class="cancel">Voltar</button>
                 </div>
             </form>
         </div>

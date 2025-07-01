@@ -8,6 +8,18 @@
     --gradientColor2: #f58a29;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
 .mainContainer {
     display: flex;
     flex-direction: column;
