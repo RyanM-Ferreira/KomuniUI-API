@@ -78,9 +78,6 @@ const upload = multer({
 postsRoute.post('/posts', authMiddleware, upload.single('file'), async (req, res) => {
     const posts = req.body;
     const imageData = req.file.buffer;
-    console.log('req.file', req.file);
-    console.log('req.body', req.file.buffer);
-    console.log('imagedata', imageData);
 
     if (imageData) {
         posts.file = imageData;
