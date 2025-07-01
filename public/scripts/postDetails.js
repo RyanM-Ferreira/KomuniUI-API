@@ -1,6 +1,9 @@
 const postContainer = document.getElementById('postDetail');
 const commentsContainer = document.getElementById('commentsContainer');
 
+const userId = JSON.parse(localStorage.getItem('userId'));
+
+
 async function loadPostDetails() {
     try {
         const response = await fetch(`http://localhost:3000/api/posts/${postId}`);
@@ -54,7 +57,6 @@ async function loadComments() {
                 ${comments.map(comment => `
                     <div class="comment-card">
                         <div class="user-info">
-                            <div class="profile-pic"></div>
                             <div><b>${comment.userId}</b></div>
                         </div>
                         <p>${comment.content}</p>
@@ -79,7 +81,7 @@ async function sendComment() {
 
     const newComment = {
         content: content,
-        userId: 139, // ! Trocar depois para usuário logado
+        userId: userId,
         postId: postId,
         date: new Date().toISOString().split('T')[0]
     };
@@ -105,6 +107,7 @@ async function sendComment() {
         alert('Erro ao enviar comentário');
     }
 }
+
 
 loadPostDetails();
 loadComments();
