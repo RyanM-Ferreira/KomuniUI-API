@@ -33,7 +33,7 @@ export const Posts = sequelize.define('posts', {
     date: {
         type: Sequelize.DATEONLY,
         defaultValue: Sequelize.NOW,
-        validate:{
+        validate: {
             isDate: {
                 msg: 'Data inválida!'
             }
@@ -51,8 +51,25 @@ export const Posts = sequelize.define('posts', {
         allowNull: false,
         onDelete: 'CASCADE'
 
+    },
+    file: {
+        type: Sequelize.BLOB, 
+        allowNull: true,
+    },
+    fileName: {
+        type: Sequelize.STRING,
+        allowNull: true,
+    },
+    mimeType: {
+        type: Sequelize.STRING,
+        allowNull: true,
     }
+
+
+
+
 });
+
 
 export async function createPost(post) {
     try {
