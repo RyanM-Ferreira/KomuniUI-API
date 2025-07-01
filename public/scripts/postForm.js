@@ -48,6 +48,7 @@ form.addEventListener('submit', async (e) => {
             alert('Post criado com sucesso!');
             console.log(result);
             form.reset();
+            window.location.href = '/index';
         } else {
             alert(`Erro: ${result.erro?.mensagem || 'Erro desconhecido'}`);
             console.error(result);
