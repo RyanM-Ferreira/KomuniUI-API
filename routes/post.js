@@ -10,13 +10,30 @@ import { authMiddleware } from '../middleware/authMiddleware.js';
 import express from 'express';
 import { createPost, readPosts, readPostsPerId, updatePostPerId, deletePostPerId } from '../models/posts.js';
 
+
 import { Comments } from '../models/comments.js';
 
 export const postDetailsRoute = express.Router();
+
 export const postsRoute = express.Router();
 
+import multer from 'multer';
+const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: { fileSize: 5 * 1024 * 1024 },
+    fileFilter: (req, file, cb) => {
+        const allowedMimes = ['image/jpeg', 'image/png', 'image/gif'];
+        if (allowedMimes.includes(file.mimetype)) {
+            cb(null, true);
+        } else {
+            cb(new Error('Tipo de arquivo não permitido. Apenas imagens são aceitas!'), false);
+        }
+    },
 
-/**
+});
+
+
+/** 
  * @swagger
  * /posts:
  *   post:
@@ -58,8 +75,18 @@ export const postsRoute = express.Router();
  *       500:
  *         description: Erro interno ao criar post
  */
-postsRoute.post('/posts', authMiddleware, async (req, res) => {
+postsRoute.post('/posts', authMiddleware, upload.single('file'), async (req, res) => {
     const posts = req.body;
+    const imageData = req.file.buffer;
+    console.log('req.file', req.file);
+    console.log('req.body', req.file.buffer);
+    console.log('imagedata', imageData);
+
+    if (imageData) {
+        posts.file = imageData;
+        posts.mimeType = imageData.mimetype;
+        posts.fileName = imageData.originalname;
+    }
 
     res.statusCode = 400;
     try {
