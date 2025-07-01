@@ -81,6 +81,7 @@ async function sendComment() {
         content: content,
         userId: 139, // ! Trocar depois para usuário logado
         postId: postId,
+        date: new Date().toISOString().split('T')[0]
     };
 
     try {
