@@ -7,11 +7,9 @@ let server;
 
 beforeAll(async () => {
     server = await App();
-
 });
 
 afterAll(async () => {
-    await server.close();
     await sequelize.close();
 });
 
@@ -455,6 +453,8 @@ describe('Testes para o endpoint /posts', () => {
     });
 
     it('Deve retornar erro ao tentar deletar um post, porém o post não existe', async () => {
+        
+        
         const user = {
             name: 'João',
             email: 'João@exemplo.com',
