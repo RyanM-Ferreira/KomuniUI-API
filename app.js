@@ -6,8 +6,13 @@ import { usersRoute } from './routes/users.js';
 import { commentsRoute } from './routes/comments.js';
 import { postsRoute } from './routes/post.js';
 import { authRoute } from './routes/auth.js';
+import { placesRoute } from './routes/places.js';
+
 
 import { swaggerSpec, swaggerUi } from './swagger.js';
+
+import 'dotenv/config.js';
+
 
 export const app = express();
 
@@ -27,6 +32,7 @@ app.use(usersRoute);
 app.use(commentsRoute);
 app.use(postsRoute);
 app.use(authRoute);
+app.use(placesRoute);
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 

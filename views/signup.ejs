@@ -12,7 +12,7 @@
     <div class="container">
         <h2>Bem-vindo</h2>
 
-        <form action="/users" method="POST">
+        <form id="signupForm">
             <label for="name">Nome completo:</label>
             <input type="text" id="name" name="name" placeholder="Nome Sobrenome" required>
 
@@ -30,3 +30,51 @@
 </body>
 
 </html>
+
+<script>
+    if (localStorage.getItem('token')) {
+        window.location.href = '/index';
+    }
+
+    document.getElementById('signupForm').addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if (!name || !email || !password) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        const response = await fetch('/users', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, password })
+        });
+
+
+        if (response.ok) {
+            return;
+        }
+
+        const loginresponse = await fetch('/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await loginresponse.json();
+
+        if (loginresponse.ok && data.token) {
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('email', JSON.stringify(data.email));
+            localStorage.setItem('userId', JSON.stringify(data.userId));
+            alert('Conta criada com sucesso!');
+            window.location.href = '/index';
+        } else {
+            alert(data.error?.message || 'Erro ao criar conta');
+        }
+    });
+</script>

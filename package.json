@@ -18,6 +18,7 @@
   "author": "Arthur Martin, Ryan Ferreira, Moises Lima",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.10.0",
     "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
