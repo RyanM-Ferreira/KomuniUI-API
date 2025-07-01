@@ -70,6 +70,7 @@
         if (loginresponse.ok && data.token) {
             localStorage.setItem('token', data.token);
             localStorage.setItem('email', JSON.stringify(data.email));
+            localStorage.setItem('userId', JSON.stringify(data.userId));
             alert('Conta criada com sucesso!');
             window.location.href = '/index';
         } else {

@@ -35,7 +35,7 @@
 
     document.getElementById('loginForm').addEventListener('submit', async function (event) {
         event.preventDefault();
-        
+
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
@@ -54,6 +54,7 @@
         if (response.ok && data.token) {
             localStorage.setItem('token', data.token);
             localStorage.setItem('email', JSON.stringify(data.email));
+            localStorage.setItem('userId', JSON.stringify(data.userId));
             alert('Login realizado com sucesso!');
             window.location.href = '/index';
         } else {
