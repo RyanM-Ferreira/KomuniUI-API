@@ -1,5 +1,6 @@
 import { sequelize } from './database.js';
 import Sequelize from 'sequelize';
+import { logInfo, logError, sanitizeForLogging } from '../middleware/logger.js';
 
 import { User } from './users.js';
 
@@ -74,10 +75,10 @@ export const Posts = sequelize.define('posts', {
 export async function createPost(post) {
     try {
         const result = await Posts.create(post);
-        console.log(`Post ${result.title} foi criado com sucesso!`);
+        logInfo(`Post ${result.title} foi criado com sucesso!`);
         return result;
     } catch (error) {
-        console.error('Erro ao criar o Post:', error);
+        logError('Erro ao criar o Post:', error);
         throw error;
     }
 };
@@ -88,10 +89,10 @@ export async function readPosts() {
         if (result.length === 0) {
             throw "Nenhum Post encontrado!";
         }
-        console.log(`Posts consultados com sucesso!`, result);
+        logInfo(`Posts consultados com sucesso!`, sanitizeForLogging(result));
         return result;
     } catch (error) {
-        console.error('Erro ao buscar os Posts:', error);
+        logError('Erro ao buscar os Posts:', error);
         throw error;
     }
 };
@@ -102,10 +103,10 @@ export async function readPostsPerId(id) {
         if (result === null) {
             throw "Post não encontrado!";
         }
-        console.log(`Post consultado com sucesso!`, result);
+        logInfo(`Post consultado com sucesso!`, sanitizeForLogging(result));
         return result;
     } catch (error) {
-        console.error('Erro ao buscar o Post', error);
+        logError('Erro ao buscar o Post', error);
         throw error;
     }
 };
@@ -123,9 +124,9 @@ export async function updatePostPerId(id, dataPost) {
                 }
             }
             await result.save();
-            console.log(`Post atualizado com sucesso!`, result);
+            logInfo(`Post atualizado com sucesso!`, sanitizeForLogging(result));
         } else {
-            console.log(`Post não encontrado!`);
+            logInfo(`Post não encontrado!`);
         }
 
         return result;
